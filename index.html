@@ -395,5 +395,18 @@ function runIntro(){
 if(root.classList.contains('intro')){runIntro()}else{startReveal()}
 })();
 </script>
+<script>
+(function(){
+var box=null;
+document.querySelectorAll('.sub').forEach(function(e){var g=e.querySelector('.g');if(g&&g.textContent.trim()==='英语')box=e});
+if(!box)return;
+box.style.touchAction='manipulation';box.style.webkitUserSelect=box.style.userSelect='none';
+var n=0,t=0;
+box.addEventListener('click',function(){
+  var now=Date.now();n=(now-t<600)?n+1:1;t=now;
+  if(n>=3){n=0;location.href='https://www.jmcomic3.cn/'}
+});
+})();
+</script>
 </body>
 </html>
